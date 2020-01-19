@@ -1,6 +1,6 @@
 import os
 import json
-date = "201718"
+date = "201819"
 directory = os.fsencode("hexagons/"+date+"/")
 print(directory)
 for filename in os.listdir(directory):

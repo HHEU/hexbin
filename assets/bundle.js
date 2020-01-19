@@ -6,64 +6,24 @@ $.getJSON('assets/data.json', function (data) {
   var shuffled = shuffle(data)
   $.each(shuffled, function (key, val) {
     var img = $('<img />', {
-      'class': 'overlay',
+      'class': 'hex',
       'src': val.raster,
       'alt': val.description,
-      'title': val.description
-    })
-
-    var text = $('<div />', {
-      'class': 'centered'
-    })
-
-    var name = $('<div />', {
-      'class': 'sticker-name'
-    }).append(val.name)
-
-
-    var desc = $('<div />', {
-      'class': 'sticker-desc'
-    }).append(val.description)
-
-    var links = $('<div />', {
-      'class': 'sticker-links'
-    })
-
-
-    var vector = $('<i title="vector" class="pad fas fa-shapes"></i>')
-    var raster = $('<i title="raster" class="pad fas fa-images"></i>')
-    if (val.raster) {
-      links.append($('<a />', {
-        'href': val.raster
-      }).append(raster))
-    }
-    if (val.vector) {
-      links.append($('<a />', {
-        'href': val.vector
-      }).append(vector))
-    }
-    
-    text.append(name)
-    text.append(desc)
-    text.append(links)
-  
-
-    var container = $('<div />', {
-      'class': 'hex',
       'width': '181px',
-      'height': '209px',
+      'height': '209px'
     })
-    container.append(img);
-    container.append(text);
 
-    container.appendTo('#grid')
+    $('<a />', {
+      'href': "http://hack.athon.uk/docs/art/hexbin/" + val.filename,
+      'target': '_blank'
+    }).append(img).appendTo('#grid')
   })
 
   var hexes = document.querySelectorAll('.hex')
   var root = document.querySelector('#grid')
 
   function scan () {
-    grid({ element: root, spacing: 4}, hexes)
+    grid({ element: root, spacing: 4 }, hexes)
   }
 
   scan()
