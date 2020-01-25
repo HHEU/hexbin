@@ -482,6 +482,12 @@
     "filename": "meta/ic_hack_demo_2016.json"
   },
   {
+    "raster": "hexagons/mmh_demo_201920.png",
+    "name": "mmh_demo",
+    "description": "2020 season I demoed sticker",
+    "filename": "meta/man_mat_hack_demo_201920.json"
+  },
+  {
     "raster": "hexagons/201819/manmethacks.png",
     "name": "manmethacks",
     "description": "2017 season I demoed sticker",
